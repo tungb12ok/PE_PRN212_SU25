@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DAL.Entities;
+namespace DAL.Models;
 
-public partial class UserAccount
+public partial class Jlptaccount
 {
-    public int UserId { get; set; }
+    public int AccountId { get; set; }
 
     public string Password { get; set; } = null!;
 
