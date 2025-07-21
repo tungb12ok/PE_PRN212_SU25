@@ -61,7 +61,9 @@ public class GenericService<T> : IGenericService<T> where T : class
     {
         var entity = _repository.GetById(id);
         if (entity != null)
+        {
             _repository.Remove(entity);
+        }
     }
 
     public bool Exists(Func<T, bool> predicate)
@@ -71,7 +73,7 @@ public class GenericService<T> : IGenericService<T> where T : class
 
     public int Count(Func<T, bool>? predicate = null)
     {
-        return predicate == null 
+        return predicate == null
             ? _repository.GetAll().Count()
             : _repository.GetAll().Count(predicate);
     }

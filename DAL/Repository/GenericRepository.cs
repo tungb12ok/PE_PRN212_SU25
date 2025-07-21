@@ -1,18 +1,18 @@
 using System.Linq.Expressions;
-using DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using DAL.IRepositories;
+using DAL.Models;
 
 namespace DAL.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected readonly Su25researchDbContext _context;
+        protected readonly Su25jlptmockTestDbContext _context;
         protected readonly DbSet<T> _dbSet;
 
         public GenericRepository()
         {
-            _context = new Su25researchDbContext(); 
+            _context = new Su25jlptmockTestDbContext(); 
             _dbSet = _context.Set<T>();
         }
 

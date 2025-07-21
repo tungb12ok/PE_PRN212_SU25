@@ -1,29 +1,11 @@
-﻿using DAL.Entities;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using DAL.Repository;
-using DAL;
 using BIL.Service;
 using BIL.IServices;
-
+using DAL.Models;
 
 namespace JLPTMockTestManagement__SE180090
 {
-    /// <summary>
-    /// Interaction logic for LoginWindow.xaml
-    /// </summary>
     public partial class LoginWindow : Window
     {
         private readonly IJlptaccountService _jlptaccountService;
@@ -31,7 +13,7 @@ namespace JLPTMockTestManagement__SE180090
         public LoginWindow()
         {
             InitializeComponent();
-            _jlptaccountService = new AccountService();
+            _jlptaccountService = new JlptaccountService();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -39,35 +21,36 @@ namespace JLPTMockTestManagement__SE180090
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Password;
 
-            //1.CHECK EMAIL AND PASSWORD CÓ RỖNG KHÔNG
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Email and Password cannot be empty.", "Login Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            //2.NHẬP TÀI KHOẢN PASSWORD ===>GỌI SERVICE
-            UserAccount? user = _jlptaccountService.Login(email, password);
 
-            //3.CHECK LOGIN EMAIL AND PASSWORD COI CÓ THÀNH CÔNG KHÔNG
-            if (user == null)
+            try
             {
-                //LOGIN KHÔNG THÀNH CÔNG
-                MessageBox.Show("Invalid email or password.", "Login Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
+                Jlptaccount? user = _jlptaccountService.Login(email, password);
+
+                if (user == null)
+                {
+                    MessageBox.Show("Invalid email or password.", "Login Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                if (user.Role == 4)
+                {
+                    MessageBox.Show("You have no permission to access this function!", "Access Denied", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                var main = new JLPTMockTestManagementWindow(user);
+                main.Show();
+                this.Close();
             }
-            //4.PHÂN QUYỀN NGƯỜI DÙNG
-            if (user.Role == 4)
+            catch (Exception ex)
             {
-                //USER IS MEMBER  
-                MessageBox.Show("You have no permission to access this function!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
+                MessageBox.Show("An error occurred while logging in.\n" + ex.Message, "System Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            //CHẶN QUYỀN CRUD CỦA MEMBER
-            //MỞ MÀN HÌNH CHÍNH RESEARCH PROJECT MANAGEMENT WINDOW,
-            //CÒN LẠI ADMIN, MANAGER, STAFF
-            ResearchProjectManagementWindow main = new  ResearchProjectManagementWindow(user);
-            main.Show();
-            this.Close(); //HIỂN THỊ MAIN RỒI ẨN LOGIN 
         }
     }
 }

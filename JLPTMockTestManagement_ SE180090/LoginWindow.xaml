@@ -5,44 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JLPTMockTestManagement__SE180090"
         mc:Ignorable="d"
-        Title="Login Window SU 2025"
+        Title="Login Window - SU 2025"
         Height="400" Width="700"
-        FontFamily="Tahoma"
-        FontSize="26"
-        Background="#FFF5F5DC"
+        FontFamily="Arial"
+        FontSize="24"
+        Background="#FFBAE6FD"
         WindowStartupLocation="CenterScreen">
 
     <Grid Margin="40">
+        <!-- 3 rows: Email, Password, Login button -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
+        <!-- 2 equal columns -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
 
-        
-        <Label Grid.ColumnSpan="2" Content="Login to Window" 
-               FontFamily="Arial" FontSize="28" Foreground="#FF6B705C" 
-               HorizontalAlignment="Center" Margin="0,0,0,20" />
+        <!-- Email Row -->
+        <Label Grid.Row="0" Grid.Column="0" Content="Email:"
+               VerticalAlignment="Center" HorizontalAlignment="Right"
+               Margin="0,0,10,0" Foreground="#FF1E3A8A" />
 
-        <Label Grid.Row="1" Grid.Column="0" Content="Email:" 
-               FontFamily="Arial" FontSize="24" Foreground="#FF6B705C" 
-               VerticalAlignment="Center"/>
-        <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="1" Height="32" 
-                 Background="#FFFFF8EB" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtEmail" Grid.Row="0" Grid.Column="1"
+                 Height="34"
+                 VerticalContentAlignment="Center"
+                 Background="#FFF0F9FF" />
 
-        <Label Grid.Row="2" Grid.Column="0" Content="Password:" 
-               FontFamily="Arial" FontSize="24" Foreground="#FF6B705C" 
-               VerticalAlignment="Center"/>
-        <PasswordBox x:Name="txtPassword" Grid.Row="2" Grid.Column="1" Height="32" 
-                     Background="#FFFFF8EB" VerticalContentAlignment="Center"/>
+        <!-- Password Row -->
+        <Label Grid.Row="1" Grid.Column="0" Content="Password:"
+               VerticalAlignment="Center" HorizontalAlignment="Right"
+               Margin="0,0,10,0" Foreground="#FF1E3A8A" />
 
-        <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Login" 
-                Padding="10" Background="#FFB38B82" Foreground="White" 
-                HorizontalAlignment="Center" Width="120" Click="LoginButton_Click"/>
+        <PasswordBox x:Name="txtPassword" Grid.Row="1" Grid.Column="1"
+                     Height="34"
+                     VerticalContentAlignment="Center"
+                     Background="#FFF0F9FF" />
+
+        <!-- Login Button Centered in Row 2 -->
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Login"
+                Width="140" Height="34"
+                Background="#FF06B6D4" Foreground="White"
+                HorizontalAlignment="Center"
+                Click="LoginButton_Click" />
     </Grid>
 </Window>
