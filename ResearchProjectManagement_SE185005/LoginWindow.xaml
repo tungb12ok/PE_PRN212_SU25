@@ -1,0 +1,48 @@
+﻿<Window x:Class="ResearchProjectManagement_SE185005.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ResearchProjectManagement_SE185005"
+        mc:Ignorable="d"
+  Title="Login Window SU 2025"
+        Height="400" Width="700"
+        FontFamily="Tahoma"
+        FontSize="26"
+        Background="#FFF5F5DC"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        
+        <Label Grid.ColumnSpan="2" Content="Login to Window" 
+               FontFamily="Arial" FontSize="28" Foreground="#FF6B705C" 
+               HorizontalAlignment="Center" Margin="0,0,0,20" />
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Email:" 
+               FontFamily="Arial" FontSize="24" Foreground="#FF6B705C" 
+               VerticalAlignment="Center"/>
+        <TextBox x:Name="txtEmail" Grid.Row="1" Grid.Column="1" Height="32" 
+                 Background="#FFFFF8EB" VerticalContentAlignment="Center"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Password:" 
+               FontFamily="Arial" FontSize="24" Foreground="#FF6B705C" 
+               VerticalAlignment="Center"/>
+        <PasswordBox x:Name="txtPassword" Grid.Row="2" Grid.Column="1" Height="32" 
+                     Background="#FFFFF8EB" VerticalContentAlignment="Center"/>
+
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Login" 
+                Padding="10" Background="#FFB38B82" Foreground="White" 
+                HorizontalAlignment="Center" Width="120" Click="LoginButton_Click"/>
+    </Grid>
+</Window>
