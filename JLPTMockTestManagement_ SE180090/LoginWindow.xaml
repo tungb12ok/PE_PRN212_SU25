@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JLPTMockTestManagement__SE180090"
         mc:Ignorable="d"
-  Title="Login Window SU 2025"
+        Title="Login Window SU 2025"
         Height="400" Width="700"
         FontFamily="Tahoma"
         FontSize="26"

@@ -26,12 +26,12 @@ namespace JLPTMockTestManagement__SE180090
     /// </summary>
     public partial class LoginWindow : Window
     {
-        private readonly IAccountService _accountService;
+        private readonly IJlptaccountService _jlptaccountService;
 
         public LoginWindow()
         {
             InitializeComponent();
-            _accountService = new AccountService();
+            _jlptaccountService = new AccountService();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -46,7 +46,7 @@ namespace JLPTMockTestManagement__SE180090
                 return;
             }
             //2.NHẬP TÀI KHOẢN PASSWORD ===>GỌI SERVICE
-            UserAccount? user = _accountService.Login(email, password);
+            UserAccount? user = _jlptaccountService.Login(email, password);
 
             //3.CHECK LOGIN EMAIL AND PASSWORD COI CÓ THÀNH CÔNG KHÔNG
             if (user == null)

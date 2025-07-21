@@ -7,7 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af10e429-126f-4ca2-9c8a-22829b769f7f" name="Changes" comment="" />
+    <list default="true" id="af10e429-126f-4ca2-9c8a-22829b769f7f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BIL/IService/IJlptaccountService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BIL/Service/JlptaccountService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BIL/IService/IAccountService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JLPTMockTestManagement_ SE180090/LoginWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/JLPTMockTestManagement_ SE180090/LoginWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JLPTMockTestManagement_ SE180090/LoginWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JLPTMockTestManagement_ SE180090/LoginWindow.xaml.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
