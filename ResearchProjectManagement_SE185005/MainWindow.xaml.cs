@@ -28,7 +28,7 @@ namespace ResearchProjectManagement_SE185005
         }
         public void GetResearchers()
         {
-            //Xuống Nhờ Services xử lí thông tin giúp
+            //Xuống Nhờ Service xử lí thông tin giúp
             //ĐỔ DỮ LIỆU TRONG DATA GRID (UI)
             dgResearcherList.ItemsSource = _researcherService.GetResearchers();
         }
