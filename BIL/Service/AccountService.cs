@@ -9,4 +9,9 @@ public class AccountService : GenericService<UserAccount>, IAccountService
     public AccountService() : base() 
     {
     }
+
+    public UserAccount? Login(string email, string password)
+    {
+        return _repository.FirstOrDefault(x => x.Email == email && x.Password == password);
+    }
 }

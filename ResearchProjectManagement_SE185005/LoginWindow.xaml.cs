@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using DAL.Repository;
 using DAL;
 using BIL.Service;
+using BIL.IServices;
 
 
 namespace ResearchProjectManagement_SE185005
@@ -25,11 +26,12 @@ namespace ResearchProjectManagement_SE185005
     /// </summary>
     public partial class LoginWindow : Window
     {
-        private readonly AccountService _accountService;
+        private readonly IAccountService _accountService;
+
         public LoginWindow()
         {
             InitializeComponent();
-            _accountService = new();
+            _accountService = new AccountService();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
