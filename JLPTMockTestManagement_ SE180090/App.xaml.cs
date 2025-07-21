@@ -2,7 +2,7 @@
 using System;
 using System.Windows;
 
-namespace ResearchProjectManagement_SE185005
+namespace JLPTMockTestManagement__SE180090
 {
     public partial class App : Application
     {

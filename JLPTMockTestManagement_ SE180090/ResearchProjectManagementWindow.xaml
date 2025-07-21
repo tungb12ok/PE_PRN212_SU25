@@ -1,4 +1,4 @@
-﻿<Window x:Class="ResearchProjectManagement_SE185005.ResearchProjectManagementWindow"
+﻿<Window x:Class="JLPTMockTestManagement__SE180090.ResearchProjectManagementWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Research Project Management - SU 2025"

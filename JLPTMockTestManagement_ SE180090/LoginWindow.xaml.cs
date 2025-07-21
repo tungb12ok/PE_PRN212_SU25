@@ -19,7 +19,7 @@ using BIL.Service;
 using BIL.IServices;
 
 
-namespace ResearchProjectManagement_SE185005
+namespace JLPTMockTestManagement__SE180090
 {
     /// <summary>
     /// Interaction logic for LoginWindow.xaml

@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ResearchProjectManagement_SE185005
+namespace JLPTMockTestManagement__SE180090
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

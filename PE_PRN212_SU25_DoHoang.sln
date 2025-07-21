@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIL", "BIL\BIL.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResearchProjectManagement_SE185005", "ResearchProjectManagement_SE185005\ResearchProjectManagement_SE185005.csproj", "{2A11B850-4FFA-4E1C-BE4F-E9360255FE00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLPTMockTestManagement_ SE180090", "JLPTMockTestManagement_ SE180090\JLPTMockTestManagement_ SE180090.csproj", "{2A11B850-4FFA-4E1C-BE4F-E9360255FE00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
