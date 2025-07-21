@@ -10,7 +10,7 @@ namespace BIL.Service
 {
     public class AccountService
     {
-        //GUI  -> Service -> REPO -> DBCONTEXT -> TABLE
+        //GUI  -> Services -> REPO -> DBCONTEXT -> TABLE
         private readonly AccountRepository _repo ;
 
         public AccountService()
